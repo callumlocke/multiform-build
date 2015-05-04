@@ -118,7 +118,7 @@ async function compile(filename) {
 // scan for files and build them
 const jobs = [];
 
-const glob = new Glob('**/*.{js,es,es6,es7}', {
+const glob = new Glob('**/*.{js,jsx,es,es6,es7}', {
   cwd: config.source,
   strict: true,
 });
