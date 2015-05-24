@@ -33,7 +33,7 @@ config.source = path.resolve(config.source);
 
 config.builds.forEach((build, i) => {
   defaults(build, {
-    dir: 'lib-' + i,
+    dir: 'dist-' + i,
   });
 
   if (!build.options) build.options = {};
