@@ -1,5 +1,3 @@
-'use strict';
-
 import path from 'path';
 import Promise from 'bluebird';
 import {transform} from 'babel-core';
