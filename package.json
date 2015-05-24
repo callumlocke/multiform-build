@@ -1,7 +1,7 @@
 {
   "name": "multiform-build",
   "description": "Multiform module builder.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Callum Locke",
   "bin": {
     "multiform": "cli.js"
