@@ -3,6 +3,7 @@ import Promise from 'bluebird';
 import {transform} from 'babel-core';
 import {Glob} from 'glob';
 import {assign, defaults, merge} from 'lodash';
+import {green} from 'chalk';
 import fs from 'fs';
 
 Promise.promisifyAll(fs);
@@ -129,6 +130,15 @@ glob.on('err', err => { throw err; });
 
 glob.on('end', () => {
   Promise.all(jobs)
-    .then(() => { finished = true; })
+    .then(() => {
+      console.log(green('✓') + ' finished building with config: ', config);
+
+      config.builds.forEach(build => {
+        console.log('dir listing for', build.dir);
+        console.log(fs.readdirSync(build.dir));
+      });
+
+      finished = true;
+    })
     .catch(err => { throw err; });
 });
